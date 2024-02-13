@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useFormik, FormikProps } from "formik";
-import { SignUp, SelectEvent, InputEvent, Login } from "type/type";
+import { SignUp, SelectEvent, InputEvent, Login } from "../../../type/type";
 import { actLogin, actSignUp } from "./duck/action";
-import { useAppDispatch, useAppSelector } from "store/type";
+import { useAppDispatch, useAppSelector } from "../../../store/type";
 import { NavigateFunction, useNavigate } from "react-router";
 import * as Yup from "yup";
 import { NavLink } from "react-router-dom";

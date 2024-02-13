@@ -1,4 +1,4 @@
-import { Action, AppState, Result } from "type/type";
+import { Action, AppState, Result } from "../../../../type/type";
 import * as ActionTypes from "./constant";
 import { NULL } from "sass";
 const myState = {

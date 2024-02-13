@@ -1,7 +1,7 @@
 import { actLogOut } from "../../../../page/AdminTemplate/AuthPage/duck/action";
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "store/type";
+import { useAppDispatch, useAppSelector } from "../../../../store/type";
 
 export default function Header() {
   const [status, setStatus] = useState(false);
