@@ -1,0 +1,29 @@
+.introduce {
+  .swiper {
+    overflow: visible;
+    overflow-x: clip;
+    height: 250px;
+
+    .swiper-slide {
+      height: auto;
+
+      .slider-content {
+        &:hover {
+          box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.13);
+        }
+      }
+
+      img {
+        display: inline-block;
+        height: 80px;
+        width: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+
+    .swiper-pagination {
+      transform: translateY(30px);
+    }
+  }
+}

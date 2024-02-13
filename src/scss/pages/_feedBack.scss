@@ -1,0 +1,156 @@
+.feed-back {
+  .angle {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: -3px;
+    left: 2px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 50px solid #f6ba35;
+  }
+
+  .small-box {
+    position: absolute;
+    z-index: 1;
+    height: 10%;
+    width: 10%;
+    background-image: radial-gradient(#41b294 10%, transparent 11%),
+      radial-gradient(#41b294 10%, transparent 11%);
+    background-size: 10px 10px;
+  }
+
+  .small-box-top-left {
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 10%;
+  }
+
+  .small-box-bottom-left {
+    width: 80px;
+    border-radius: 50%;
+    bottom: 0;
+    left: 30%;
+    height: 80px;
+  }
+
+  .small-box-top-right {
+    width: 80px;
+    top: 0;
+    right: 40%;
+    height: 50px;
+  }
+
+  .small-box-bottom-right {
+    bottom: 0;
+    right: 10%;
+    height: 50px;
+    background-image: radial-gradient(#f6ba35 10%, transparent 11%);
+  }
+
+  .feed-back-content {
+    .content-left {
+      .bg-img {
+        top: -10%;
+        z-index: 1;
+        height: 220px;
+        width: 230px;
+        position: absolute;
+        background-color: #ed85ab;
+        border-radius: 10px 100px 110px;
+      }
+    }
+
+    .content-right {
+      p:nth-child(1) {
+        position: relative;
+        margin-bottom: 12px;
+
+        &::before {
+          content: open-quote;
+          line-height: 30px;
+          position: absolute;
+          top: 0;
+          left: -6%;
+          font-size: 50px;
+          font-family: fantasy;
+          color: #ed85ab;
+        }
+
+        &::after {
+          content: close-quote;
+          font-family: fantasy;
+          margin-left: 6px;
+        }
+      }
+
+      p:nth-child(2) {
+        color: #ed85ab;
+      }
+
+      > span {
+        color: #8c8c8c;
+      }
+    }
+  }
+}
+
+@include Reponsive($xxs) {
+  .feed-back {
+    .small-box-top-right {
+      right: 0;
+    }
+  }
+}
+
+@include Reponsive($xs) {
+  .feed-back {
+    .small-box-top-left {
+      width: 15%;
+    }
+
+    .small-box-top-right {
+      right: 0;
+    }
+
+    .small-box-bottom-right {
+      display: none;
+    }
+
+    .small-box-bottom-left {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+@include Reponsive($sm) {
+  .feed-back {
+    .small-box-top-left {
+      width: 15%;
+    }
+
+    .small-box-top-right {
+      right: 0;
+    }
+
+    .small-box-bottom-right {
+      display: none;
+    }
+
+    .small-box-bottom-left {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+@include Reponsive($md) {
+  .feed-back {
+    .small-box-top-left {
+      width: 15%;
+    }
+  }
+}

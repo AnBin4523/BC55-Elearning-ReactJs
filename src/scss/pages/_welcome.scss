@@ -1,0 +1,293 @@
+.welcome {
+  .angle {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 88px;
+    left: 92px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 50px solid #f6ba35;
+  }
+
+  .small-box {
+    position: absolute;
+    z-index: 1;
+    background-image: radial-gradient(#41b294 10%, transparent 11%),
+      radial-gradient(#41b294 10%, transparent 11%);
+    background-size: 10px 10px;
+  }
+
+  .small-box-top-left {
+    top: 10%;
+    left: 10%;
+    height: 70px;
+    width: 180px;
+  }
+
+  .small-box-bottom-right {
+    bottom: 10%;
+    left: 70%;
+    height: 50px;
+    width: 90px;
+    background-image: radial-gradient(#ed85ab 10%, transparent 11%);
+  }
+
+  .small-box-top-right {
+    height: 90px;
+    width: 90px;
+    top: 0;
+    right: 0;
+    transform: rotate(45deg);
+    background-image: radial-gradient(#f6ba35 10%, transparent 11%);
+  }
+
+  .welcome-left {
+    .welcome-left-title {
+      h1 {
+        position: relative;
+        font-weight: 600;
+        font-size: 50px;
+      }
+
+      h1:last-of-type {
+        display: flex;
+        align-items: baseline;
+        font-size: 65px;
+        line-height: 84px;
+      }
+
+      h1:last-of-type > span {
+        display: block;
+        font-size: 50px;
+        color: #41b294;
+        height: auto;
+        overflow: hidden;
+        @include animate(aniText, 5s, steps(10), infinite);
+      }
+    }
+  }
+
+  .welcome-right {
+    .slide-img {
+      position: absolute;
+      width: 15%;
+      height: 15%;
+    }
+
+    .slide-clound1 {
+      top: 0;
+      left: 0;
+
+      @include animate(aniClound, 5s, linear, infinite);
+    }
+
+    .slide-clound2 {
+      top: 30%;
+      left: 20%;
+      @include animate(aniClound, 5s, linear 2s, infinite);
+    }
+
+    .slide-clound3 {
+      top: 15%;
+      left: 25%;
+      @include animate(aniClound, 7s, linear 2s, infinite);
+    }
+
+    .slide-message {
+      transform-origin: bottom;
+      top: 42%;
+      right: 45%;
+      @include animate(aniMessage, 4s, linear 3s, infinite);
+    }
+
+    .slide-codeImg {
+      left: 20%;
+      top: 50%;
+      @include animate(aniCodeImg, 4s, null, infinite);
+    }
+  }
+}
+
+@include Reponsive($lg) {
+  .welcome {
+    margin-top: 30px;
+
+    .angle {
+      top: 22px;
+      left: 2px;
+    }
+
+    .small-box-top-left {
+      left: 0%;
+      width: 180px;
+    }
+
+    .small-box-top-right {
+      height: 70px;
+      width: 70px;
+      right: 9px;
+      top: 15%;
+    }
+
+    .small-box-bottom-right {
+      height: 50px;
+      width: 90px;
+    }
+
+    .welcome-left-title {
+      img {
+        height: 60%;
+        right: 5%;
+      }
+    }
+  }
+}
+
+@include Reponsive($md) {
+  .welcome {
+    .angle {
+      top: 18px;
+      left: 2px;
+    }
+
+    .small-box-top-left {
+      left: 0%;
+      width: 100px;
+      height: 60px;
+    }
+
+    .small-box-top-right {
+      height: 50px;
+      width: 50px;
+      right: 9px;
+      top: 15%;
+    }
+
+    .small-box-bottom-right {
+      height: 30px;
+      width: 60px;
+    }
+
+    .welcome-left {
+      img {
+        object-fit: fill;
+        height: 120px;
+        width: 110px;
+        right: 8%;
+      }
+      .welcome-left-title {
+        h1 {
+          font-size: 36px;
+        }
+        h1:last-of-type {
+          font-size: 42px;
+        }
+        h1:last-of-type > span {
+          font-size: 36px;
+        }
+      }
+    }
+  }
+}
+@include Reponsive($sm) {
+  .welcome {
+    .angle {
+      display: none;
+    }
+
+    .small-box-top-left {
+      display: none;
+    }
+
+    .small-box-top-right {
+      display: none;
+    }
+
+    .small-box-bottom-right {
+      display: none;
+    }
+
+    .welcome-left {
+      img {
+        display: none;
+      }
+      .welcome-left-title {
+        h1 {
+          font-size: 36px;
+        }
+        h1:last-of-type {
+          font-size: 42px;
+        }
+        h1:last-of-type > span {
+          font-size: 36px;
+        }
+      }
+    }
+  }
+}
+
+@include keyframes(aniText) {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 242px;
+  }
+}
+
+@include keyframes(aniClound) {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@include keyframes(aniMessage) {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(30deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@include keyframes(aniCodeImg) {
+  0% {
+    opacity: 0;
+
+    transform: translateY(-5%);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: translateY(-10%);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: translateY(-15%);
+  }
+}

@@ -1,0 +1,33 @@
+@mixin Reponsive($type) {
+  @if $type ==$xxs {
+    @media screen and (max-width: $xxs) {
+      @content;
+    }
+  } @else if $type ==$xs {
+    @media screen and (max-width: $xs) {
+      @content;
+    }
+  } @else if $type ==$sm {
+    @media screen and (max-width: $sm) {
+      @content;
+    }
+  } @else if $type ==$md {
+    @media screen and (max-width: $md) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $lg) {
+      @content;
+    }
+  }
+}
+
+@mixin animate($animation, $duration, $method, $times) {
+  animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}

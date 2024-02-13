@@ -1,0 +1,31 @@
+.about {
+  .about-item {
+    h6 {
+      text-transform: uppercase;
+      color: #41b294;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    h5 {
+      color: #012025;
+      font-weight: 500;
+      font-size: 40px;
+      padding: 10px 0;
+    }
+
+    p {
+      line-height: 2.2;
+      color: #8c8c8c;
+    }
+
+    p:first-letter {
+      font-size: calc(60px + 0.75vw);
+      line-height: 40px;
+      color: #cd5c5c;
+      float: left;
+      padding-top: 10px;
+      padding-right: 5px;
+    }
+  }
+}

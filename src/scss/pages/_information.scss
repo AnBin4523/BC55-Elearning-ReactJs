@@ -1,0 +1,118 @@
+@property --progress-value {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes html-progress {
+  to {
+    --progress-value: 92;
+  }
+}
+
+@keyframes css-progress {
+  to {
+    --progress-value: 87;
+  }
+}
+
+@keyframes js-progress {
+  to {
+    --progress-value: 73;
+  }
+}
+
+@keyframes react-progress {
+  to {
+    --progress-value: 80;
+  }
+}
+.progress-bar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  color: #000;
+  /* to center the percentage value */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// .progress-bar::before {
+//     counter-reset: percentage var(--progress-value);
+//     content: counter(percentage) '%';
+// }
+
+.html {
+  color: #f9ca9a;
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(#f9ca9a calc(var(--progress-value) * 1%), #e9ecef 0);
+  animation: html-progress 2s 1 forwards;
+}
+
+// .html::before {
+//     animation: html-progress 2s 1 forwards;
+// }
+
+.css {
+  color: #f8bebb;
+  background: radial-gradient(
+      closest-side,
+      white 79%,
+      transparent 80% 100%,
+      white 0
+    ),
+    conic-gradient(#f8bebb calc(var(--progress-value) * 1%), #e9ecef 0);
+  animation: css-progress 2s 1 forwards;
+}
+
+.css::before {
+  animation: css-progress 2s 1 forwards;
+}
+
+.js {
+  animation: js-progress 2s 1 forwards;
+}
+
+.js::before {
+  animation: js-progress 2s 1 forwards;
+}
+
+.react {
+  color: #113d3c;
+  background: radial-gradient(
+      closest-side,
+      white 79%,
+      transparent 80% 100%,
+      white 0
+    ),
+    conic-gradient(#113d3c calc(var(--progress-value) * 1%), #e9ecef 0);
+  animation: react-progress 2s 1 forwards;
+}
+
+.react::before {
+  animation: react-progress 2s 1 forwards;
+}
+
+progress {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.infor-user {
+  min-height: 100vh;
+  background-image: url("https://login.cybersoft.edu.vn/static/media/background.b697469b.png");
+  background-size: cover;
+}
+
+.card-blur {
+  background: linear-gradient(
+    117.76deg,
+    hsla(0, 0%, 100%, 0.6) -7.21%,
+    hsla(0, 0%, 100%, 0.3) 118.08%
+  );
+  border-radius: 8px;
+  border: 1px solid #fff;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.02);
+}

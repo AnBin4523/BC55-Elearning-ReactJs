@@ -1,0 +1,56 @@
+.infoCourse {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: white;
+  gap: 20px;
+  padding: 0 50px;
+}
+
+.infoItem {
+  padding: 20px;
+}
+
+.infoLarge {
+  grid-row: 1 / span 2;
+  background-color: $mainColor;
+  background-image: url(../../Image/astronaut.3c90d598.png);
+  background-position: 100% 100%;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+.infoSmall_1 {
+  background-color: $primaryColor;
+}
+
+.infoSmall_2 {
+  background-color: #5c8295;
+}
+
+.infoSmall_3 {
+  background-color: #63c0a8;
+}
+
+.infoContent {
+  h3 {
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 500;
+  }
+  ul li {
+    padding: 5px;
+  }
+  ul li i {
+    padding-right: 10px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .infoCourse {
+    grid-template-columns: none;
+    padding: 0 30px;
+  }
+  .infoContent h3 {
+    font-size: 22px;
+  }
+}

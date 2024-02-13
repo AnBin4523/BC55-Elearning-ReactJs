@@ -1,0 +1,130 @@
+.cardGlobal {
+  display: flex;
+  justify-content: center;
+}
+.cardItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s;
+  width: 280px;
+  min-width: 280px;
+  min-height: 370px;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
+  > img {
+    height: 185px;
+    min-height: 185px;
+  }
+}
+.titleCard {
+  display: inline-block;
+  position: absolute;
+  z-index: 10;
+  top: 174px;
+  padding: 0 10px;
+  color: white;
+  background-color: $mainColor;
+}
+.cardBodyGlobal {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 20px;
+}
+.cardIcon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  p {
+    &:first-of-type {
+      font-size: 12px;
+      color: #8c8c8c;
+      text-decoration: line-through;
+    }
+    &:nth-of-type(2) {
+      font-weight: 500;
+      color: $mainColor;
+    }
+  }
+  span {
+    &:nth-of-type(2) {
+      font-size: 12px;
+      color: #8c8c8c;
+      text-decoration: line-through;
+    }
+  }
+  .iconTag {
+    font-size: 18px;
+    color: red;
+    margin-left: 4px;
+  }
+}
+.titleMaker {
+  display: flex;
+  align-items: center;
+}
+.imgCardFooter {
+  height: 40px;
+  width: 40px;
+  padding: 2px;
+  border-color: $primaryColor transparent;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid $primaryColor;
+  border-right: 1px solid transparent;
+  border-top: 1px solid $primaryColor;
+  border-radius: 50%;
+}
+.cardSale {
+  position: absolute;
+  top: 5px;
+  left: -5px;
+  width: 85px;
+  height: 30px;
+  padding: 5px 8px 4px;
+  color: white;
+  background-color: red;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    right: -12px;
+    border-color: red transparent;
+    border-style: solid;
+    border-width: 15px 12px 15px 0;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    bottom: -10px;
+    border-bottom: 10px solid transparent;
+    border-right: 5px solid red;
+    filter: brightness(0.8);
+  }
+}
+.iconOclock {
+  color: #f5c002;
+}
+.iconCalendar {
+  color: #f06f68;
+}
+.iconLevel {
+  color: #65c9ff;
+}
