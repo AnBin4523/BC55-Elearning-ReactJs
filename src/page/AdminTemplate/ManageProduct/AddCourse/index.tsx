@@ -11,7 +11,7 @@ import dayjs from "dayjs";
 
 export default function AddCourse() {
   const [componentSize, setComponentSize] = useState("default");
-  const onFormLayoutChange = ({ size }) => {
+  const onFormLayoutChange = ({ size }: { size: string }) => {
     setComponentSize(size);
   };
 
@@ -65,19 +65,24 @@ export default function AddCourse() {
 
   const handleChangeFile = (event: any) => {
     let file = event.target.files[0];
-    if (
-      file.type === "image/png" ||
-      file.type === "image/jpeg" ||
-      file.type === "image/jpg"
-    ) {
-      let reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = (event) => {
-        setImgSrc(event.target.result);
-      };
-      formik.setFieldValue("hinhAnh", file.name);
+    if (file) {
+      if (
+        file.type === "image/png" ||
+        file.type === "image/jpeg" ||
+        file.type === "image/jpg"
+      ) {
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = (event) => {
+          if (event.target) {
+            // Kiểm tra event.target có tồn tại
+            setImgSrc(event.target.result);
+          }
+        };
+        formik.setFieldValue("hinhAnh", file.name);
+      }
+      setSelectedFile(file);
     }
-    setSelectedFile(file);
   };
 
   const handleChangeDanhMuc = (value: any) => {

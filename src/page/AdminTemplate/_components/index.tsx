@@ -18,16 +18,12 @@ function getItem(label: any, key: any, icon: any, children: any) {
 
 const items = [
   getItem("Khóa Học", "1", <DesktopOutlined />, [
-    getItem("Danh Sách", "2", <NavLink to="/admin/sanpham"></NavLink>),
-    getItem("Thêm Khóa Học", "3", <NavLink to="/admin/them-sanpham"></NavLink>),
+    getItem("Danh Sách", "2", null, <NavLink to="/admin/sanpham"></NavLink>),
+    getItem("Thêm Khóa Học", "3", null, <NavLink to="/admin/them-sanpham"></NavLink>),
   ]),
   getItem("Người Dùng", "sub1", <UserOutlined />, [
-    getItem("Danh Sách", "5", <NavLink to="/admin/nguoidung"></NavLink>),
-    getItem(
-      "Thêm Người Dùng",
-      "6",
-      <NavLink to="/admin/them-nguoidung"></NavLink>
-    ),
+    getItem("Danh Sách", "5", null, <NavLink to="/admin/nguoidung"></NavLink>),
+    getItem("Thêm Người Dùng", "6", null, <NavLink to="/admin/them-nguoidung"></NavLink>),
   ]),
 ];
 

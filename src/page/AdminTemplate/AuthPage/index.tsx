@@ -292,8 +292,8 @@ export default function AuthPage() {
                   onChange={handleOnchange}
                   name="maNhom"
                   className="absolute left-0 w-full h-full bg-[#f0f0f0] text-[#000] font-semibold"
-                  placeholder="Mã nhóm"
                 >
+                  <option value="" disabled selected hidden>Mã nhóm</option>
                   <option value="GP01">GP01</option>
                   <option value="GP02">GP02</option>
                   <option value="GP03">GP03</option>
