@@ -8,10 +8,11 @@ import { NavigateFunction, useNavigate } from "react-router-dom";
 import { actFetchCategory } from "../../../HomeTemplate/Category/duck/action";
 import { RootState } from "../../../../store";
 import dayjs from "dayjs";
+import { SizeType } from "antd/es/config-provider/SizeContext";
 
 export default function AddCourse() {
-  const [componentSize, setComponentSize] = useState("default");
-  const onFormLayoutChange = ({ size }: { size: string }) => {
+  const [componentSize, setComponentSize] = useState<SizeType>("middle");
+  const onFormLayoutChange = ({ size }: { size: SizeType }) => {
     setComponentSize(size);
   };
 
@@ -76,7 +77,7 @@ export default function AddCourse() {
         reader.onload = (event) => {
           if (event.target) {
             // Kiểm tra event.target có tồn tại
-            setImgSrc(event.target.result);
+            setImgSrc(event.target.result as string);
           }
         };
         formik.setFieldValue("hinhAnh", file.name);

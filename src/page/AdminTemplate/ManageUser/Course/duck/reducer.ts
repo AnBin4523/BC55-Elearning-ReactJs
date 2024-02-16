@@ -11,12 +11,12 @@ import * as ActionTypes from "./constant";
 const myState: StateCourse<RegistedCourse> = {
   state: {
     loading: false,
-    data: null,
+    data: [],
     error: null,
   },
   state2: {
     loading: false,
-    data: null,
+    data: [],
     error: null,
   },
 };
@@ -25,7 +25,7 @@ const registedCourseReducer = (state = myState, action: Action) => {
   switch (action.type) {
     case ActionTypes.COURSE_REGISTED_REQUEST: {
       state.state.loading = true;
-      state.state.data = null;
+      state.state.data = [];
       state.state.error = null;
       return { ...state };
     }
@@ -39,7 +39,7 @@ const registedCourseReducer = (state = myState, action: Action) => {
 
     case ActionTypes.COURSE_REGISTED_FAIL: {
       state.state.loading = false;
-      state.state.data = null;
+      state.state.data = [];
       state.state.error = action.payload;
       return { ...state };
     }

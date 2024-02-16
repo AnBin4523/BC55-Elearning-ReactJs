@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, ReactNode, useEffect, useState } from "react";
 import { Table } from "antd";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "store/type";
@@ -10,6 +10,7 @@ import {
   actFetchRegistCourse,
 } from "../duck/action";
 import { useParams } from "react-router-dom";
+import { SortOrder } from "antd/lib/table/interface";
 
 export default function RegistCourse() {
   const userData = JSON.parse(localStorage.getItem("USER_ADMIN") || "");
@@ -29,10 +30,9 @@ export default function RegistCourse() {
     {
       title: "Tài Khoản",
       dataIndex: "taiKhoan",
-      value: (text: any, object: any) => {
+      render: (text: any, object: any): JSX.Element => {
         return <span>{text}</span>;
       },
-
       sorter: (a: any, b: any) => {
         let taiKhoanA = a.taiKhoan.toLowerCase().trim();
         let taiKhoanB = b.taiKhoan.toLowerCase().trim();
@@ -41,16 +41,15 @@ export default function RegistCourse() {
         }
         return -1;
       },
-      sortDirections: ["descend", "ascend"],
+      sortDirections: ["descend", "ascend"] as SortOrder[],
       width: "25%",
     },
     {
       title: "Họ Tên",
       dataIndex: "hoTen",
-      value: (text: any, object: any) => {
+      render: (text: any, object: any): JSX.Element => {
         return <span>{text}</span>;
       },
-
       sorter: (a: any, b: any) => {
         let hoTenA = a.hoTen.toLowerCase().trim();
         let hoTenB = b.hoTen.toLowerCase().trim();
@@ -59,17 +58,15 @@ export default function RegistCourse() {
         }
         return -1;
       },
-      sortDirections: ["descend", "ascend"],
+      sortDirections: ["descend", "ascend"] as SortOrder[],
       width: "25%",
     },
-
     {
       title: "Bí Danh",
       dataIndex: "biDanh",
-      value: (text: any, object: any) => {
+      render: (text: any, object: any): JSX.Element => {
         return <span>{text}</span>;
       },
-
       sorter: (a: any, b: any) => {
         let biDanhA = a.biDanh.toLowerCase().trim();
         let biDanhB = b.biDanh.toLowerCase().trim();
@@ -78,14 +75,13 @@ export default function RegistCourse() {
         }
         return -1;
       },
-      sortDirections: ["descend", "ascend"],
+      sortDirections: ["descend", "ascend"] as SortOrder[],
       width: "25%",
     },
-
     {
       title: "Tùy Chỉnh",
       dataIndex: "tuyChinh",
-      render: (text: any, user: any) => {
+      render: (text: any, user: any): JSX.Element => {
         return (
           <Fragment>
             <button
@@ -113,6 +109,7 @@ export default function RegistCourse() {
       width: "25%",
     },
   ];
+
   const columns_2 = [
     {
       title: "Tài Khoản",
@@ -120,7 +117,6 @@ export default function RegistCourse() {
       value: (text: any, object: any) => {
         return <span>{text}</span>;
       },
-
       sorter: (a: any, b: any) => {
         let taiKhoanA = a.taiKhoan.toLowerCase().trim();
         let taiKhoanB = b.taiKhoan.toLowerCase().trim();
@@ -129,7 +125,7 @@ export default function RegistCourse() {
         }
         return -1;
       },
-      sortDirections: ["descend", "ascend"],
+      sortDirections: ["descend", "ascend"] as SortOrder[],
       width: "25%",
     },
     {
@@ -138,7 +134,6 @@ export default function RegistCourse() {
       value: (text: any, object: any) => {
         return <span>{text}</span>;
       },
-
       sorter: (a: any, b: any) => {
         let hoTenA = a.hoTen.toLowerCase().trim();
         let hoTenB = b.hoTen.toLowerCase().trim();
@@ -147,7 +142,7 @@ export default function RegistCourse() {
         }
         return -1;
       },
-      sortDirections: ["descend", "ascend"],
+      sortDirections: ["descend", "ascend"] as SortOrder[],
       width: "25%",
     },
 
@@ -166,14 +161,14 @@ export default function RegistCourse() {
         }
         return -1;
       },
-      sortDirections: ["descend", "ascend"],
+      sortDirections: ["descend", "ascend"] as SortOrder[],
       width: "25%",
     },
 
     {
       title: "Tùy Chỉnh",
       dataIndex: "tuyChinh",
-      render: (text: any, user: any) => {
+      render: (text: any, user: any): ReactNode => {
         return (
           <Fragment>
             <button
@@ -215,6 +210,7 @@ export default function RegistCourse() {
       width: "25%",
     },
   ];
+
   const data_1 = listUser ? listUser : [];
   const data_2 = listPendingUser ? listPendingUser : [];
 

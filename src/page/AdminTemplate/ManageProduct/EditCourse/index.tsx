@@ -8,10 +8,11 @@ import { NavigateFunction, useNavigate, useParams } from "react-router-dom";
 import { RootState } from "../../../../store";
 import dayjs from "dayjs";
 import { actFetchCategory } from "../../../HomeTemplate/Category/duck/action";
+import { SizeType } from "antd/es/config-provider/SizeContext";
 
 export default function EditCourse() {
-  const [componentSize, setComponentSize] = useState("default");
-  const onFormLayoutChange = ({ size }) => {
+  const [componentSize, setComponentSize] = useState<SizeType>("middle");
+  const onFormLayoutChange = ({ size }: { size: SizeType }) => {
     setComponentSize(size);
   };
 

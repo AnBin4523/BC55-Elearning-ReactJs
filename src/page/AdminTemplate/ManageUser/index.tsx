@@ -7,6 +7,7 @@ import { RootState } from "../../../store";
 import { actDeleteUser, actFetchListUser } from "./duck/action";
 import { useAppDispatch } from "../../../store/type";
 import { User } from "../../../type/type";
+import { SortOrder } from "antd/lib/table/interface";
 
 const { Search } = Input;
 
@@ -41,7 +42,7 @@ export default function ListUser() {
         }
         return -1;
       },
-      sortDirections: ["descend", "ascend"],
+      sortDirections: ["descend", "ascend"] as SortOrder[],
       width: "15%",
     },
 
@@ -56,7 +57,7 @@ export default function ListUser() {
         }
         return -1;
       },
-      sortDirections: ["descend", "ascend"],
+      sortDirections: ["descend", "ascend"] as SortOrder[],
       width: "15%",
     },
 
@@ -83,7 +84,7 @@ export default function ListUser() {
         }
         return -1;
       },
-      sortDirections: ["descend", "ascend"],
+      sortDirections: ["descend", "ascend"] as SortOrder[],
       width: "15%",
     },
 
